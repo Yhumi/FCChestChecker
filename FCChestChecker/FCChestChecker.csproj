@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Dalamud.NET.SDK/12.0.0">
+  <PropertyGroup>
+    <Version>1.0.1.0</Version>
+    <Description>FC Chest Checker.</Description>
+    <PackageProjectUrl>https://github.com/Yhumi/FCChestChecker</PackageProjectUrl>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+    <PropertyGroup>
+        <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+        <DalamudPluginPath>$(appdata)\XIVLauncher\installedPlugins\FCChestChecker\$(version)</DalamudPluginPath>
+        <DalamudDevPlugins>$(appdata)\XIVLauncher\devPlugins\FCChestChecker\</DalamudDevPlugins>
+        <AssemblyName>FCChestChecker</AssemblyName>
+        <RootNamespace>FCChestChecker</RootNamespace>
+        <PackageId>FCChestChecker</PackageId>
+        <Product>FCChestChecker</Product>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+        <TargetFramework>net9.0-windows7.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <TargetFramework>net9.0-windows7.0</TargetFramework>
+        <Platforms>x64</Platforms>
+        <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>bin/Release</OutputPath>
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <TargetFramework>net9.0-windows7.0</TargetFramework>
+        <Platforms>x64</Platforms>
+        <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>$(DalamudDevPlugins)</OutputPath>
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Dalamud.Plugin.Bootstrap.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lumina" Version="5.8.0" />
+    <PackageReference Include="Lumina.Excel" Version="7.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECommons\ECommons\ECommons.csproj" />
+    <ProjectReference Include="..\OtterGui\OtterGui.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="DalamudPackager" Version="12.0.0" />
+    <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.25" />
+  </ItemGroup>
+</Project>

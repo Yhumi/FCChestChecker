@@ -1,0 +1,12 @@
+{
+  "Author": "Yhumi",
+  "Name": "FC Chest Checker",
+  "Punchline": "Check FC Chest with a command.",
+  "Description": "Check FC Chest with a command. /fccc [page]",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "fc",
+    "inventory",
+    "fc chest"
+  ]
+}
